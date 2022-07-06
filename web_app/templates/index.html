@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block titel %}TG-BOT{% endblock %}
+{% block body %}
+<div class="btn_basket"><img src="static/images/basket.svg" alt="Корзина"></div>
+<div class="logo">
+  <img class="logo__img" src="static/images/logo.svg" alt="logo">
+</div>
+<header class="header">
+  <div class="container">
+    <div class="categories">
+      <button class="category__btn category_active" data-category="all">Все</button>
+      {% for el in categories %}
+      <button class="category__btn" data-category="{{ el.categor_id }}">{{ el.name }}</button>
+      {% endfor %}
+    </div>
+    <div class="search">
+      <form>
+        <img class="search__img" src="static/images/search.svg" alt="search">
+        <input class="search__txt" type="text" placeholder="Поиск">
+      </form>
+    </div>
+  </div>
+</header>
+<div class="products">
+  {% for el in products %}
+  <div class="box_product" data-product_id="{{ el.prod_id }}" data-category_id="{{ el.category }}">
+    <div class="product_count"></div>
+      <img class="product_img" src="static/products_photo/{{ el.photo }}.jpg" alt="photo_{{ el.prod_id }}">
+      <div class="box-contant">
+        <div class="box-text">
+          <h1 class="product_name">{{ el.name }}</h1>
+          <p class="product_text">{{ el.description }}</p>
+        </div>
+        <div class="box_cost">
+          <p class="product_cost">{{ el.price }} ₽</p>
+          <div class="product_box_plus">
+            <img class="product_minus" src="static/images/minus.svg" alt="plus">
+            <img class="product_plus" src="static/images/plus.svg" alt="plus">
+          </div>
+        </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+<div class="basket_wrapper">
+  <div class="basket_window">
+    <div class="title_basket">
+      <img src="static/images/back_btn.svg" alt="Назад">
+      <div class="title_basket_text">Корзина</div>
+    </div>
+  </div>
+</div>
+<div class="under_basket">
+  <div class="total_amount_basket">
+    <p>Общая сумма:</p>
+    <p class="total_price">0 ₽</p>
+  </div>
+  <div class="submit">Оформить заказ</div>
+</div>
+<template id="product_basket">
+  <div class="box_basket_product">
+    <div class="box_content_product">
+      <img class="product_basket_img" src="static/images/prod_1.png" alt="product">
+      <div class="box_basket_text">
+        <h1 class="product_name">P1lant</h1>
+        <p class="product_text">lo Lorem</p>
+        <div class="bluer"></div>
+      </div>
+    </div>
+    <div class="box_basket_cost">
+      <p class="product_cost">300 ₽</p>
+      <div class="product_basket_count">
+        <img class="product_basket_minus" src="static/images/minus_basket.svg" alt="minus">
+        <div class="basket_count">1</div>
+        <img class="product_basket_plus" src="static/images/plus.svg" alt="plus">
+      </div>
+    </div>
+  </div>
+</template>
+{% endblock %}

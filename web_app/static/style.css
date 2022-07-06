@@ -1,0 +1,498 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  min-width: 770px;
+}
+
+body {
+  min-width: 390px;
+  /* overflow: hidden; */
+
+  /* overflow-x: hidden; */
+  background-color: rgb(238, 238, 238);
+}
+
+h1, p {
+  margin:0;
+}
+
+/* Начало шапки */
+
+.container {
+  padding-top: 15px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  box-shadow: 0px 5px 2px -3px rgb(34 60 80 / 17%);
+  max-width: 370px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+
+  /* display: none; */
+}
+
+
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+
+.logo {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  height: 50px;
+  border-bottom: 3px solid #E4E4E4;
+}
+
+.logo__img {
+  padding: 5px;
+}
+
+.header_inner {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-around; */
+  border-radius: 10px;
+  background: white;
+  padding: 3px;
+  width: 370px;
+}
+
+.category__btn {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  border: none;
+  min-width: 90px;
+  height: 28px;
+  box-shadow: 6px 1px 0px -5px rgb(34 60 80 / 17%);
+  margin-left: 1px;
+  background-color: white;
+  cursor: pointer;
+}
+
+
+
+.category_active {
+  color: white;
+  background-color: #84B818;
+  border: 0.5px solid rgba(0, 0, 0, 0.04);
+  border-radius: 10px;
+}
+
+
+.search {
+  position: relative;
+  margin-top: 15px;
+}
+
+.search__txt {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  color: rgba(60, 60, 67, 0.6);
+  border: none;
+  width: 100%;
+  height: 35px;
+  border-radius: 10px;
+  padding-left: 30px;
+  outline: none;
+}
+
+.search__btn {
+  position: absolute; 
+  top: 0;
+  right: 270px;
+  width: 30px;
+  height: 35px;
+  border: none;
+  border-radius: 10px 0 0 10px;
+  cursor: pointer;
+  background-color: white;
+}
+
+.search__img {
+  width: 15px;
+  position: absolute; 
+  top: 10px;
+  right: 345px;
+}
+
+.btn_basket {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10vh;
+  height: 10vh;
+  position: fixed;
+  right: 15px;
+  top: 85vh;
+  z-index: 5;
+  background-color: #84B818;
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+  cursor: pointer;
+  }
+
+.btn_basket img {
+  width: 5vh;
+  height: 5vh;
+}
+/* Блок товаров  */
+
+
+.products {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 390px;
+  margin: auto;
+}
+
+
+.product_count {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #84B818;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 27px;
+  height: 27px;
+
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 15px;
+  color: white;
+  letter-spacing: -0.408px;
+  opacity: 0;
+  transition: 0.5s
+}
+
+.product_count.active {
+  opacity: 1;
+}
+
+
+.box_product {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 175px;
+  height: 310px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  margin: 10px;
+  padding: 15px;
+}
+
+.hide {
+  display: none;
+}
+
+
+
+.product_img {
+  object-fit: cover;
+  width: 145px;
+  height: 140px;
+  border-radius: 12px;
+}
+
+.box-contant {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 130px;
+  margin-top: 10px;
+}
+.box-text {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+  cursor: pointer;
+}
+.product_name {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 22px;
+  letter-spacing: -0.408px;
+  color: #000000;
+}
+
+.product_text {
+  margin-top: 5px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 15px;
+  letter-spacing: -0.408px;
+  color: #767676;
+}
+
+
+.box_cost {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+
+.product_cost {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: -0.408px;
+}
+
+.product_box_plus {
+  display: flex;
+  align-items: center;
+}
+
+
+.product_minus {
+  width: 30px;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s
+}
+
+.product_minus.active {
+  opacity: 1;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+
+.product_plus {
+  width: 30px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+
+/* Корзина */
+
+
+.basket_wrapper {
+  transform: translateX(-100%);
+  transition: transform .3s;
+  background-color: rgb(238, 238, 238);
+  opacity: 0;
+}
+
+.basket_wrapper.active {
+  transform: translateX(0);
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.basket_window {
+  display: none;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 390px;
+  margin: auto;
+}
+
+.basket_window.active {
+  display: flex;
+}
+.title_basket {
+  width: 370px;
+  margin: 24px 0 10px 10px;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.title_basket_text {
+  margin-left: 5px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 15px;
+}
+
+.box_basket_product {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 370px;
+  height: 230px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  margin: 10px;
+  padding: 15px;
+}
+
+.box_basket_product:last-child {
+  margin-bottom: 165px;
+}
+
+.box_content_product {
+  display: flex;
+  flex-direction: row;
+}
+
+.product_basket_img {
+  width: 145px;
+  height: 140px;
+  border-radius: 12px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.box_basket_text {
+  position: relative;
+
+  margin-left: 10px;
+  height: 165px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.bluer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background-image: linear-gradient(#ffffff3a, #ffffffcb, #ffffff);
+}
+
+.box_basket_cost {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product_basket_count {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product_basket_minus {
+  width: 30px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.basket_count {
+  margin-left: 15px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 15px;
+}
+
+
+.product_basket_plus {
+  margin-left: 15px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.box {
+  position: relative;
+  width: 200px;
+  height: 100px;
+  overflow: hidden;
+}
+
+
+/* Under Basket */
+
+
+.under_basket {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  height: 145px;
+  background-color: rgba(255, 255, 255, 1);
+	width: 100%;
+  position: fixed;
+  bottom: 0;
+  transform: translateX(-100%);
+  transition: transform .3s;
+  z-index: 1;
+}
+
+.under_basket.active {
+  transform: translateX(0);
+  opacity: 1;
+  transition: 0.5s
+}
+
+.total_amount_basket {
+  display: flex;
+  justify-content: space-between;
+  width: 360px;
+  margin: 25px 15px 0;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 15px;
+}
+
+.submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 360px;
+  height: 60px;
+  margin-bottom: 15px;
+  border-radius: 20px;
+  color: rgba(255, 255, 255, 1);
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 23px;
+  line-height: 15px;
+  background-color: rgba(132, 184, 24, 1);
+  cursor: pointer;
+}
+
+
